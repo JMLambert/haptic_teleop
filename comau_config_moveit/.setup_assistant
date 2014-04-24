@@ -1,0 +1,8 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: comau_config
+    relative_path: cfg/NM45_teleop_dual_2hands.urdf
+  SRDF:
+    relative_path: config/Smart_NM45_Dual.srdf
+  CONFIG:
+    generated_timestamp: 1383075676
