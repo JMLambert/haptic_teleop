@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" ?>
+<robot name="Smart_NM45_Dual" xmlns:xacro="http://ros.org/wiki/xacro">
+	<include filename="$(find comau_config)/cfg/NM45_Dual_mesh_macro.xacro" />
+	<!--include filename="$(find robotiq_s_model_visualization)/cfg/s-model_articulated_macro.xacro" /-->
+	<xacro:NM45_Dual_mesh prefix=""/>
+	<!--xacro:s-model_articulated prefix=""/-->
+  <!-- link list -->
+		<link name="eff_stack_1">
+			<visual>
+				<geometry>
+					<mesh filename="package://comau_config/meshes/visual/Effector_stack.STL" />
+				</geometry>
+				<material name="orange">
+					<color rgba="1 0.5 0 1"/>
+				</material>
+			</visual>
+			<collision>
+				<geometry>
+					<mesh filename="package://comau_config/meshes/collision/Effector_stack_CH.STL" />
+				</geometry>
+				<material name="yellow">
+					<color rgba="0 1 1 1"/>
+				</material>
+			</collision>
+		</link>
+		<link name="eff_stack_2">
+			<visual>
+				<geometry>
+					<mesh filename="package://comau_config/meshes/visual/Effector_stack.STL" />
+				</geometry>
+				<material name="orange">
+					<color rgba="1 0.5 0 1"/>
+				</material>
+			</visual>
+			<collision>
+				<geometry>
+					<mesh filename="package://comau_config/meshes/collision/Effector_stack_CH.STL" />
+				</geometry>
+				<material name="yellow">
+					<color rgba="0 1 1 1"/>
+				</material>
+			</collision>
+		</link>
+  <!-- end link list -->
+  <!-- joint list -->
+		<joint name="flange2stack_1" type="fixed">
+			<parent link="link6_1"/>
+			<child link="eff_stack_1"/>
+			<origin xyz="0.025 0 0" rpy="0 1.57 0"/>
+		</joint>
+		<joint name="stack2hand_1" type="fixed">
+			<parent link="eff_stack_1"/>
+			<child link="palm"/>
+			<origin xyz="0 0 0.2123" rpy="1.57 0 0"/>
+		</joint>
+		<joint name="flange2stack_2" type="fixed">
+			<parent link="link6_2"/>
+			<child link="eff_stack_2"/>
+			<origin xyz="0.025 0 0" rpy="0 1.57 0"/>
+		</joint>
+  <!-- end of joint list -->
+
+</robot>

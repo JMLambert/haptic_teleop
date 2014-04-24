@@ -1,0 +1,340 @@
+﻿<robot xmlns:xacro="http://ros.org/wiki/xacro">
+	<xacro:macro name="NM45_Dual_mesh" params="prefix">
+		<!-- link list -->
+		<link name="${prefix}base_link">
+		</link>
+		<link name="${prefix}link0_1">
+			<visual>
+				<geometry>
+					<mesh filename="package://comau_config/meshes/visual/NM-45_Base.STL" />
+				</geometry>
+				<material name="red">
+					<color rgba="1 0 0 1"/>
+				</material>
+			</visual>
+			<collision>
+				<geometry>
+					<mesh filename="package://comau_config/meshes/collision/NM-45_Base_CH.STL" />
+				</geometry>
+				<material name="yellow">
+					<color rgba="0 1 1 1"/>
+				</material>
+			</collision>
+		</link>
+		<link name="${prefix}link1_1">
+			<visual>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://comau_config/meshes/visual/NM-45_Link1.STL"/>
+				</geometry>
+				<material name="red">
+					<color rgba="1 0 0 1"/>
+				</material>
+			</visual>
+			<collision>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://comau_config/meshes/collision/NM-45_Link1_CH.STL" />
+				</geometry>
+				<material name="yellow"/>
+			</collision>
+		</link>
+		<link name="${prefix}link2_1">
+			<visual>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://comau_config/meshes/visual/NM-45_Link2.STL"/>
+				</geometry>
+				<material name="red"/>
+			</visual>
+			<collision>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://comau_config/meshes/collision/NM-45_Link2_CH.STL"/>
+				</geometry>
+				<material name="yellow"/>
+			</collision>
+		</link>
+		<link name="${prefix}link3_1">
+			<visual>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://comau_config/meshes/visual/NM-45_Link3.STL"/>
+				</geometry>
+				<material name="red"/>
+			</visual>
+			<collision>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://comau_config/meshes/collision/NM-45_Link3_CH.STL"/>
+				</geometry>
+				<material name="yellow"/>
+			</collision>
+		</link>
+		<link name="${prefix}link4_1">
+			<visual>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://comau_config/meshes/visual/NM-45_Link4.STL"/>
+				</geometry>
+				<material name="red"/>
+			</visual>
+			<collision>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://comau_config/meshes/collision/NM-45_Link4_CH.STL"/>
+				</geometry>
+				<material name="yellow"/>
+			</collision>
+		</link>
+		<link name="${prefix}link5_1">
+			<visual>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://comau_config/meshes/visual/NM-45_Link5.STL"/>
+				</geometry>
+				<material name="red"/>
+			</visual>
+			<collision>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://comau_config/meshes/collision/NM-45_Link5_CH.STL"/>
+				</geometry>
+				<material name="yellow"/>
+			</collision>
+		</link>
+		<link name="${prefix}link6_1">
+			<visual>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://comau_config/meshes/visual/NM-45_Link6.STL"/>
+				</geometry>
+				<material name="red"/>
+			</visual>
+			<collision>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://comau_config/meshes/collision/NM-45_Link6_CH.STL"/>
+				</geometry>
+				<material name="yellow"/>
+			</collision>
+		</link>
+
+		<link name="${prefix}link0_2">
+			<visual>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://comau_config/meshes/visual/NM-45_Base.STL" />
+				</geometry>
+				<material name="red">
+					<color rgba="1 0 0 1"/>
+				</material>
+			</visual>
+			<collision>
+				<geometry>
+					<mesh filename="package://comau_config/meshes/collision/NM-45_Base_CH.STL" />
+				</geometry>
+				<material name="yellow">
+					<color rgba="0 1 1 1"/>
+				</material>
+			</collision>
+		</link>
+		<link name="${prefix}link1_2">
+			<visual>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://comau_config/meshes/visual/NM-45_Link1.STL"/>
+				</geometry>
+				<material name="red">
+					<color rgba="1 0 0 1"/>
+				</material>
+			</visual>
+			<collision>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://comau_config/meshes/collision/NM-45_Link1_CH.STL" />
+				</geometry>
+				<material name="yellow"/>
+			</collision>
+		</link>
+		<link name="${prefix}link2_2">
+			<visual>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://comau_config/meshes/visual/NM-45_Link2.STL"/>
+				</geometry>
+				<material name="red"/>
+			</visual>
+			<collision>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://comau_config/meshes/collision/NM-45_Link2_CH.STL"/>
+				</geometry>
+				<material name="yellow"/>
+			</collision>
+		</link>
+		<link name="${prefix}link3_2">
+			<visual>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://comau_config/meshes/visual/NM-45_Link3.STL"/>
+				</geometry>
+				<material name="red"/>
+			</visual>
+			<collision>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://comau_config/meshes/collision/NM-45_Link3_CH.STL"/>
+				</geometry>
+				<material name="yellow"/>
+			</collision>
+		</link>
+		<link name="${prefix}link4_2">
+			<visual>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://comau_config/meshes/visual/NM-45_Link4.STL"/>
+				</geometry>
+				<material name="red"/>
+			</visual>
+			<collision>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://comau_config/meshes/collision/NM-45_Link4_CH.STL"/>
+				</geometry>
+				<material name="yellow"/>
+			</collision>
+		</link>
+		<link name="${prefix}link5_2">
+			<visual>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://comau_config/meshes/visual/NM-45_Link5.STL"/>
+				</geometry>
+				<material name="red"/>
+			</visual>
+			<collision>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://comau_config/meshes/collision/NM-45_Link5_CH.STL"/>
+				</geometry>
+				<material name="yellow"/>
+			</collision>
+		</link>
+		<link name="${prefix}link6_2">
+			<visual>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://comau_config/meshes/visual/NM-45_Link6.STL"/>
+				</geometry>
+				<material name="red"/>
+			</visual>
+			<collision>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://comau_config/meshes/collision/NM-45_Link6_CH.STL"/>
+				</geometry>
+				<material name="yellow"/>
+			</collision>
+		</link>
+		<!-- end of link list -->
+		<!-- joint list -->
+		<joint name="${prefix}joint0_1" type="fixed">
+			<parent link="${prefix}base_link"/>
+			<child link="${prefix}link0_1"/>
+			<origin xyz="0 0 0" rpy="0 0 -1.57"/>
+		</joint>
+		<joint name="${prefix}joint1_1" type="revolute">
+			<parent link="${prefix}link0_1"/>
+			<child link="${prefix}link1_1"/>
+			<origin xyz="0 0 0.305" rpy="0 0 0"/>
+			<axis xyz="0 0 -1" />
+			<limit lower="-3.1416" upper="3.1416" effort="100" velocity="2.26" />
+		</joint>
+		<joint name="${prefix}joint2_1" type="revolute">
+			<parent link="${prefix}link1_1"/>
+			<child link="${prefix}link2_1"/>
+			<origin xyz="0.4 -0.130 0.445" rpy="0 -1.57 0"/>
+			<axis xyz="0 1 0" />
+			<limit lower="-0.733" upper="2.269" effort="100" velocity="2.26" />
+		</joint>
+		<joint name="${prefix}joint3_1" type="revolute">
+			<parent link="${prefix}link2_1"/>
+			<child link="${prefix}link3_1"/>
+			<origin xyz="0.75 0.01 0" rpy="0 0 0"/>
+			<axis xyz="0 -1 0" />
+			<limit lower="-2.967" upper="1.92" effort="100" velocity="2.96" />
+		</joint>
+		<joint name="${prefix}joint4_1" type="revolute">
+			<parent link="${prefix}link3_1"/>
+			<child link="${prefix}link4_1"/>
+			<origin xyz="0.234 0.120 0.250" rpy="0 0 0"/>
+			<axis xyz="-1 0 0" />
+			<limit lower="-3.1416" upper="3.1416" effort="100" velocity="2.96" />
+		</joint>
+		<joint name="${prefix}joint5_1" type="revolute">
+			<parent link="${prefix}link4_1"/>
+			<child link="${prefix}link5_1"/>
+			<origin xyz="0.578 0 0" rpy="0 0 0"/>
+			<axis xyz="0 1 0" />
+			<limit lower="-2.147" upper="2.147" effort="100" velocity="3.48" />
+		</joint>
+		<joint name="${prefix}joint6_1" type="revolute">
+			<parent link="${prefix}link5_1"/>
+			<child link="${prefix}link6_1"/>
+			<origin xyz="0.150 0 0" rpy="0 0 0"/>
+			<axis xyz="-1 0 0" />
+			<limit lower="-3.1416" upper="3.1416" effort="100" velocity="3.48" />
+		</joint>
+
+		<joint name="${prefix}joint0_2" type="fixed">
+			<parent link="${prefix}base_link"/>
+			<child link="${prefix}link0_2"/>
+			<origin xyz="0 -3 0" rpy="0 0 1.57"/>
+			<!--origin xyz="0 -2 0" rpy="0 0 1.57"/-->
+		</joint>		
+		<joint name="${prefix}joint1_2" type="revolute">
+			<parent link="${prefix}link0_2"/>
+			<child link="${prefix}link1_2"/>
+			<origin xyz="0 0 0.305" rpy="0 0 0"/>
+			<axis xyz="0 0 -1" />
+			<limit lower="-3.1416" upper="3.1416" effort="100" velocity="2.26" />
+		</joint>
+		<joint name="${prefix}joint2_2" type="revolute">
+			<parent link="${prefix}link1_2"/>
+			<child link="${prefix}link2_2"/>
+			<origin xyz="0.4 -0.130 0.445" rpy="0 -1.57 0"/>
+			<axis xyz="0 1 0" />
+			<limit lower="-0.733" upper="2.269" effort="100" velocity="2.26" />
+		</joint>
+		<joint name="${prefix}joint3_2" type="revolute">
+			<parent link="${prefix}link2_2"/>
+			<child link="${prefix}link3_2"/>
+			<origin xyz="0.75 0.01 0" rpy="0 0 0"/>
+			<axis xyz="0 -1 0" />
+			<limit lower="-2.967" upper="1.92" effort="100" velocity="2.96" />
+		</joint>
+		<joint name="${prefix}joint4_2" type="revolute">
+			<parent link="${prefix}link3_2"/>
+			<child link="${prefix}link4_2"/>
+			<origin xyz="0.234 0.120 0.250" rpy="0 0 0"/>
+			<axis xyz="-1 0 0" />
+			<limit lower="-3.1416" upper="3.1416" effort="100" velocity="2.96" />
+		</joint>
+		<joint name="${prefix}joint5_2" type="revolute">
+			<parent link="${prefix}link4_2"/>
+			<child link="${prefix}link5_2"/>
+			<origin xyz="0.578 0 0" rpy="0 0 0"/>
+			<axis xyz="0 1 0" />
+			<limit lower="-2.147" upper="2.147" effort="100" velocity="3.48" />
+		</joint>
+		<joint name="${prefix}joint6_2" type="revolute">
+			<parent link="${prefix}link5_2"/>
+			<child link="${prefix}link6_2"/>
+			<origin xyz="0.150 0 0" rpy="0 0 0"/>
+			<axis xyz="-1 0 0" />
+			<limit lower="-3.1416" upper="3.1416" effort="100" velocity="3.48" />
+		</joint>
+		<!-- end of joint list -->
+	</xacro:macro>
+</robot>

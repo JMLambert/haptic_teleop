@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" ?>
+
+<robot name="NM45_Mesh" xmlns:xacro="http://ros.org/wiki/xacro">
+	<include filename="$(find comau_config)/cfg/NM45_mesh_macro.xacro" />
+	<xacro:NM45_mesh prefix=""/>
+</robot>
+

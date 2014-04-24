@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: comau_config
+Description: Description of comau_config
+Version: 0.0.0
+Cflags: -I/usr/local/include
+Libs: -L/usr/local/lib 
+Requires: roscpp rospy std_msgs moveit_core moveit_ros_planning_interface
