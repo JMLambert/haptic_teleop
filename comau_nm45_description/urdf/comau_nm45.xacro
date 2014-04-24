@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" ?>
+
+<robot name="comau_nm45" xmlns:xacro="http://ros.org/wiki/xacro">
+	<include filename="$(find comau_nm45_description)/urdf/comau_nm45_macro.xacro" />
+	<xacro:comau_nm45 prefix=""/>
+</robot>
+

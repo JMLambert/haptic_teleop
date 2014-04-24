@@ -1,0 +1,137 @@
+﻿<robot xmlns:xacro="http://ros.org/wiki/xacro">
+	<xacro:macro name="NM45-2dof_meshgz" params="prefix">
+		<!-- link list -->
+		<!-- Used for fixing robot to Gazebo 'base_link' -->
+  		<link name="world"/>
+
+		<link name="${prefix}base_link">
+			<visual>
+				<geometry>
+					<mesh filename="package://comau_nm45_description/meshes/visual/NM-45_Base.STL" />
+				</geometry>
+				<material name="red">
+					<color rgba="1 0 0 1"/>
+				</material>
+			</visual>
+			<collision>
+				<geometry>
+					<mesh filename="package://comau_nm45_description/meshes/collision/NM-45_Base_CH.STL" />
+				</geometry>
+				<material name="yellow">
+					<color rgba="0 1 1 1"/>
+				</material>
+			</collision>
+			<inertial>
+      				<origin xyz="-0.039 0 0.137" rpy="0 0 0"/>
+     				<mass value="687.65815"/>
+      				<inertia 
+        			  ixx="21.60311" ixy="-0.78936" ixz="-0.25255" 
+        			  iyy="45.97675" iyz="0.34612" 
+        			  izz="31.75235"/>
+    			</inertial>
+		</link>
+		<link name="${prefix}link1">
+			<visual>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://comau_nm45_description/meshes/visual/NM-45_Link1.STL"/>
+				</geometry>
+				<material name="red">
+					<color rgba="1 0 0 1"/>
+				</material>
+			</visual>
+			<collision>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://comau_nm45_description/meshes/collision/NM-45_Link1_CH.STL" />
+				</geometry>
+				<material name="yellow"/>
+			</collision>
+			<inertial>
+      				<origin xyz="0.15159 0 0.31076" rpy="0 0 0"/>
+     				<mass value="704.18892"/>
+      				<inertia 
+        			  ixx="27.07108" ixy="-12.09446" ixz="-2.64292" 
+        			  iyy="37.379510" iyz="1.06182" 
+        			  izz="42.98623"/>
+    			</inertial>
+		</link>
+		<link name="${prefix}link2">
+			<visual>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://comau_nm45_description/meshes/visual/NM-45_Link2.STL"/>
+				</geometry>
+				<material name="red"/>
+			</visual>
+			<collision>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://comau_nm45_description/meshes/collision/NM-45_Link2_CH.STL"/>
+				</geometry>
+				<material name="yellow"/>
+			</collision>
+			<inertial>
+      				<origin xyz="0.3626 0.01795 -0.21355" rpy="0 0 0"/>
+     				<mass value="1"/>
+      				<inertia 
+        			  ixx="1.0" ixy="0.0" ixz="0.0" 
+        			  iyy="1.0" iyz="0.0" 
+        			  izz="1.0"/>
+    			</inertial>
+		</link>
+		<link name="${prefix}link3">
+			<visual>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://comau_nm45_description/meshes/visual/NM-45_Link3.STL"/>
+				</geometry>
+				<material name="red"/>
+			</visual>
+			<collision>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://comau_nm45_description/meshes/collision/NM-45_Link3_CH.STL"/>
+				</geometry>
+				<material name="yellow"/>
+			</collision>
+			<inertial>
+      				<origin xyz="0 0 1" rpy="0 0 0"/>
+     				<mass value="1"/>
+      				<inertia 
+        			  ixx="1.0" ixy="0.0" ixz="0.0" 
+        			  iyy="1.0" iyz="0.0" 
+        			  izz="1.0"/>
+    			</inertial>
+		</link>
+		
+		<!-- end of link list -->
+		<!-- joint list -->
+		<joint name="fixed" type="fixed">
+    			<parent link="world"/>
+    			<child link="base_link"/>
+  		</joint>
+		<joint name="${prefix}joint1" type="revolute">
+			<parent link="base_link"/>
+			<child link="link1"/>
+			<origin xyz="0 0 0.22005" rpy="0 0 0"/>
+			<axis xyz="0 0 -1" />
+			<limit lower="-3.1416" upper="3.1416" effort="100" velocity="2.26" />
+		</joint>
+		<joint name="${prefix}joint2" type="revolute">
+			<parent link="link1"/>
+			<child link="link2"/>
+			<origin xyz="0.4 0.0 0.530" rpy="1.5708 -1.5708 0"/>
+			<axis xyz="0 0 -1" />
+			<limit lower="-0.733" upper="2.269" effort="100" velocity="2.26" />
+		</joint>
+		<joint name="${prefix}joint3" type="revolute">
+			<parent link="link2"/>
+			<child link="link3"/>
+			<origin xyz="0.75 0.0 0" rpy="0 0 -1.5708"/>
+			<axis xyz="0 0 1" />
+			<limit lower="-2.967" upper="1.92" effort="100" velocity="2.96" />
+		</joint>
+		<!-- end of joint list -->
+	</xacro:macro>
+</robot>

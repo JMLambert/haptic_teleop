@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" ?>
+
+<robot name="NM45-2dof_Meshgz" xmlns:xacro="http://ros.org/wiki/xacro">
+	<include filename="$(find comau_nm45_description)/urdf/NM45-2dof_meshgz_macro.xacro" />
+	<xacro:NM45-2dof_meshgz prefix=""/>
+</robot>
+
