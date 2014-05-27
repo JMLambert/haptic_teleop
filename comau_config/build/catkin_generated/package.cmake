@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "comau_config")
-set(comau_config_MAINTAINER "jml <jml@todo.todo>")
-set(comau_config_DEPRECATED "")
-set(comau_config_VERSION "0.0.0")
-set(comau_config_BUILD_DEPENDS "roscpp" "rospy" "std_msgs" "moveit_core" "moveit_ros_planning_interface")
-set(comau_config_RUN_DEPENDS "roscpp" "rospy" "std_msgs" "moveit_core" "moveit_ros_planning_interface")
-set(comau_config_BUILDTOOL_DEPENDS "catkin")

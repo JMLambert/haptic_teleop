@@ -57,7 +57,7 @@
         			  izz="37.37951"/>
     			</inertial>
 		</link>
-		<link name="${prefix}link2">
+		<!--link name="${prefix}link2">
 			<visual>
 				<origin rpy="-1.5709 0 0" xyz="0 0 0.13"/>
 				<geometry>
@@ -91,7 +91,7 @@
 				<material name="red"/>
 			</visual>
 			<collision>
-				<origin rpy="-1.5709 0 0" xyz="0 0 0.1"/>
+				<origin rpy="-1.5709 0 0" xyz="0 0 0.12"/>
 				<geometry>
 					<mesh filename="package://comau_nm45_description/meshes/collision/NM-45_Link3_CH.STL"/>
 				</geometry>
@@ -163,7 +163,7 @@
 				<material name="red"/>
 			</visual>
 			<collision>
-				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<origin rpy="0 0 0" xyz="0 0 -0.025"/>
 				<geometry>
 					<mesh filename="package://comau_nm45_description/meshes/collision/NM-45_Link6_CH.STL"/>
 				</geometry>
@@ -177,7 +177,7 @@
         			  iyy="0.0165" iyz="0.0" 
         			  izz="0.00325"/>
     			</inertial>
-		</link>
+		</link-->
 		<!-- end of link list -->
 		<!-- joint list -->
 		<joint name="fixed" type="fixed">
@@ -191,7 +191,7 @@
 			<axis xyz="0 0 -1" />
 			<limit lower="-3.1416" upper="3.1416" effort="100" velocity="2.26" />
 		</joint>
-		<joint name="${prefix}joint2" type="revolute">
+		<!--joint name="${prefix}joint2" type="revolute">
 			<parent link="link1"/>
 			<child link="link2"/>
 			<origin xyz="0.4 0.0 0.530" rpy="1.5708 -1.5708 0"/>
@@ -225,7 +225,7 @@
 			<origin xyz="0.175 0 0" rpy="0 1.5708 0"/>
 			<axis xyz="0 0 -1" />
 			<limit lower="-3.1416" upper="3.1416" effort="100" velocity="3.48" />
-		</joint>
+		</joint-->
 		<!-- end of joint list -->
 	</xacro:macro>
 </robot>

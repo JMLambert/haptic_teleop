@@ -1,5 +1,13 @@
 ﻿<robot xmlns:xacro="http://ros.org/wiki/xacro">
 	<xacro:macro name="comau_nm45" params="prefix">
+
+		<!-- ros_control plugin -->
+  		<gazebo>
+    		  <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      		    <robotNamespace>/comau_nm45</robotNamespace>		 
+    		  </plugin>
+  		</gazebo>
+		
 		<!-- link list -->
 		<!-- Used for fixing robot to Gazebo 'base_link' -->
   		<link name="world"/>
@@ -91,7 +99,7 @@
 				<material name="red"/>
 			</visual>
 			<collision>
-				<origin rpy="-1.5709 0 0" xyz="0 0 0.1"/>
+				<origin rpy="-1.5709 0 0" xyz="0 0 0.12"/>
 				<geometry>
 					<mesh filename="package://comau_nm45_description/meshes/collision/NM-45_Link3_CH.STL"/>
 				</geometry>
@@ -154,30 +162,6 @@
         			  izz="0.15854"/>
     			</inertial>
 		</link>
-		<link name="${prefix}link6">
-			<visual>
-				<origin rpy="0 -1.5709 0" xyz="0 0 -0.025"/>
-				<geometry>
-					<mesh filename="package://comau_nm45_description/meshes/visual/NM-45_Link6.STL"/>
-				</geometry>
-				<material name="red"/>
-			</visual>
-			<collision>
-				<origin rpy="0 0 0" xyz="0 0 0"/>
-				<geometry>
-					<mesh filename="package://comau_nm45_description/meshes/collision/NM-45_Link6_CH.STL"/>
-				</geometry>
-				<material name="yellow"/>
-			</collision>
-			<inertial>
-      				<origin xyz="0 0 -0.0131" rpy="0 0 0"/>
-     				<mass value="1.62727"/>
-      				<inertia 
-        			  ixx="0.0034" ixy="0.0" ixz="0.0" 
-        			  iyy="0.0165" iyz="0.0" 
-        			  izz="0.00325"/>
-    			</inertial>
-		</link>
 		<!-- end of link list -->
 		<!-- joint list -->
 		<joint name="fixed" type="fixed">
@@ -219,13 +203,55 @@
 			<axis xyz="0 0 -1" />
 			<limit lower="-2.147" upper="2.147" effort="100" velocity="3.48" />
 		</joint>
-		<joint name="${prefix}joint6" type="revolute">
-			<parent link="link5"/>
-			<child link="link6"/>
-			<origin xyz="0.175 0 0" rpy="0 1.5708 0"/>
-			<axis xyz="0 0 -1" />
-			<limit lower="-3.1416" upper="3.1416" effort="100" velocity="3.48" />
-		</joint>
 		<!-- end of joint list -->
+
+		<!-- transmission list -->
+		<transmission name="tran1">
+    		  <type>transmission_interface/SimpleTransmission</type>
+    		  <joint name="joint1"/>
+    		  <actuator name="motor1">
+      		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+      		    <mechanicalReduction>1</mechanicalReduction>
+    		  </actuator>
+ 		</transmission>
+
+  		<transmission name="tran2">
+    		  <type>transmission_interface/SimpleTransmission</type>
+    		  <joint name="joint2"/>
+    		  <actuator name="motor2">
+      		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+      		    <mechanicalReduction>1</mechanicalReduction>
+    		  </actuator>
+  		</transmission>
+
+		<transmission name="tran3">
+    		  <type>transmission_interface/SimpleTransmission</type>
+    		  <joint name="joint3"/>
+    		  <actuator name="motor3">
+      		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+      		    <mechanicalReduction>1</mechanicalReduction>
+    		  </actuator>
+  		</transmission>
+
+		<transmission name="tran4">
+    		  <type>transmission_interface/SimpleTransmission</type>
+    		  <joint name="joint4"/>
+    		  <actuator name="motor4">
+      		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+      		    <mechanicalReduction>1</mechanicalReduction>
+    		  </actuator>
+  		</transmission>
+
+		<transmission name="tran5">
+    		  <type>transmission_interface/SimpleTransmission</type>
+    		  <joint name="joint5"/>
+    		  <actuator name="motor5">
+      		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+      		    <mechanicalReduction>1</mechanicalReduction>
+    		  </actuator>
+  		</transmission>
+
+		<!-- end transmission list -->
+
 	</xacro:macro>
 </robot>

@@ -1,5 +1,13 @@
 ﻿<robot xmlns:xacro="http://ros.org/wiki/xacro">
 	<xacro:macro name="comau_nm45" params="prefix">
+
+		<!-- ros_control plugin -->
+  		<!-- gazebo>
+    		  <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      		    <robotNamespace>/comau_nm45</robotNamespace>		 
+    		  </plugin>
+  		</gazebo-->
+		
 		<!-- link list -->
 		<!-- Used for fixing robot to Gazebo 'base_link' -->
   		<link name="world"/>
@@ -91,7 +99,7 @@
 				<material name="red"/>
 			</visual>
 			<collision>
-				<origin rpy="-1.5709 0 0" xyz="0 0 0.1"/>
+				<origin rpy="-1.5709 0 0" xyz="0 0 0.12"/>
 				<geometry>
 					<mesh filename="package://comau_nm45_description/meshes/collision/NM-45_Link3_CH.STL"/>
 				</geometry>
@@ -163,7 +171,7 @@
 				<material name="red"/>
 			</visual>
 			<collision>
-				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<origin rpy="0 0 0" xyz="0 0 -0.025"/>
 				<geometry>
 					<mesh filename="package://comau_nm45_description/meshes/collision/NM-45_Link6_CH.STL"/>
 				</geometry>
@@ -227,5 +235,62 @@
 			<limit lower="-3.1416" upper="3.1416" effort="100" velocity="3.48" />
 		</joint>
 		<!-- end of joint list -->
+
+		<!-- transmission list -->
+		<transmission name="tran1">
+    		  <type>transmission_interface/SimpleTransmission</type>
+    		  <joint name="joint1"/>
+    		  <actuator name="motor1">
+      		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+      		    <mechanicalReduction>1</mechanicalReduction>
+    		  </actuator>
+ 		</transmission>
+
+  		<transmission name="tran2">
+    		  <type>transmission_interface/SimpleTransmission</type>
+    		  <joint name="joint2"/>
+    		  <actuator name="motor2">
+      		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+      		    <mechanicalReduction>1</mechanicalReduction>
+    		  </actuator>
+  		</transmission>
+
+		<transmission name="tran3">
+    		  <type>transmission_interface/SimpleTransmission</type>
+    		  <joint name="joint3"/>
+    		  <actuator name="motor3">
+      		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+      		    <mechanicalReduction>1</mechanicalReduction>
+    		  </actuator>
+  		</transmission>
+
+		<transmission name="tran4">
+    		  <type>transmission_interface/SimpleTransmission</type>
+    		  <joint name="joint4"/>
+    		  <actuator name="motor4">
+      		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+      		    <mechanicalReduction>1</mechanicalReduction>
+    		  </actuator>
+  		</transmission>
+
+		<transmission name="tran5">
+    		  <type>transmission_interface/SimpleTransmission</type>
+    		  <joint name="joint5"/>
+    		  <actuator name="motor5">
+      		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+      		    <mechanicalReduction>1</mechanicalReduction>
+    		  </actuator>
+  		</transmission>
+
+		<transmission name="tran6">
+    		  <type>transmission_interface/SimpleTransmission</type>
+    		  <joint name="joint6"/>
+    		  <actuator name="motor6">
+      		    <hardwareInterface>EffortJointInterface</hardwareInterface>
+      		    <mechanicalReduction>1</mechanicalReduction>
+    		  </actuator>
+  		</transmission>
+		<!-- end transmission list -->
+
 	</xacro:macro>
 </robot>

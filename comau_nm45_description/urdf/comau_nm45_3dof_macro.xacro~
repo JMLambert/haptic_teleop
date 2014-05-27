@@ -91,7 +91,7 @@
 				<material name="red"/>
 			</visual>
 			<collision>
-				<origin rpy="-1.5709 0 0" xyz="0 0 0.1"/>
+				<origin rpy="-1.5709 0 0" xyz="0 0 0.12"/>
 				<geometry>
 					<mesh filename="package://comau_nm45_description/meshes/collision/NM-45_Link3_CH.STL"/>
 				</geometry>
@@ -163,7 +163,7 @@
 				<material name="red"/>
 			</visual>
 			<collision>
-				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<origin rpy="0 0 0" xyz="0 0 -0.025"/>
 				<geometry>
 					<mesh filename="package://comau_nm45_description/meshes/collision/NM-45_Link6_CH.STL"/>
 				</geometry>

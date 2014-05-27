@@ -1,0 +1,7 @@
+<launch>
+
+  <!-- Load RQT with a pre-setup GUI for Comau_nm45 controls from a perspective file  -->
+  <node name="comau_nm45_rqt" pkg="rqt_gui" type="rqt_gui" respawn="false"
+	output="screen" args="--perspective-file $(find comau_nm45_control)/launch/comau_nm45_rqt.perspective"/>
+  
+</launch>

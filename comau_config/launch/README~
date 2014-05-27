@@ -1,9 +1,0 @@
-To start the joint streaming server:
-roslaunch comau_dual_streaming.launch
-
-To start Rviz: 
-roslaunch display.launch
-
-To start collision detection
-roslaunch self_coll.launch OR self_coll_nohand.launch
-
