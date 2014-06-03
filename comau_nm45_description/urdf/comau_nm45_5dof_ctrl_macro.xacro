@@ -173,28 +173,28 @@
 			<child link="link1"/>
 			<origin xyz="0 0 0.22005" rpy="0 0 0"/>
 			<axis xyz="0 0 -1" />
-			<limit lower="-3.1416" upper="3.1416" effort="100" velocity="2.26" />
+			<limit lower="-3.1416" upper="3.1415" effort="100" velocity="2.26" />
 		</joint>
 		<joint name="${prefix}joint2" type="revolute">
 			<parent link="link1"/>
 			<child link="link2"/>
 			<origin xyz="0.4 0.0 0.530" rpy="1.5708 -1.5708 0"/>
 			<axis xyz="0 0 -1" />
-			<limit lower="-0.733" upper="2.269" effort="100" velocity="2.26" />
+			<limit lower="-0.733" upper="2.269" effort="10000" velocity="2.26" />
 		</joint>
 		<joint name="${prefix}joint3" type="revolute">
 			<parent link="link2"/>
 			<child link="link3"/>
 			<origin xyz="0.75 0.0 0" rpy="0 0 -1.5708"/>
 			<axis xyz="0 0 1" />
-			<limit lower="-2.967" upper="1.92" effort="100" velocity="2.96" />
+			<limit lower="-2.967" upper="1.92" effort="1000" velocity="2.96" />
 		</joint>
 		<joint name="${prefix}joint4" type="revolute">
 			<parent link="link3"/>
 			<child link="link4"/>
 			<origin xyz="0.255 0.25 0" rpy="0 1.5708 0"/>
 			<axis xyz="0 0 -1" />
-			<limit lower="-3.1416" upper="3.1416" effort="100" velocity="2.96" />
+			<limit lower="-3.1416" upper="3.1415" effort="1000" velocity="2.96" />
 		</joint>
 		<joint name="${prefix}joint5" type="revolute">
 			<parent link="link4"/>
@@ -208,46 +208,46 @@
 		<!-- transmission list -->
 		<transmission name="tran1">
     		  <type>transmission_interface/SimpleTransmission</type>
-    		  <joint name="joint1"/>
+    		  <joint name="${prefix}joint1"/>
     		  <actuator name="motor1">
       		    <hardwareInterface>EffortJointInterface</hardwareInterface>
-      		    <mechanicalReduction>1</mechanicalReduction>
+      		    <mechanicalReduction>139.03</mechanicalReduction>
     		  </actuator>
  		</transmission>
 
   		<transmission name="tran2">
     		  <type>transmission_interface/SimpleTransmission</type>
-    		  <joint name="joint2"/>
+    		  <joint name="${prefix}joint2"/>
     		  <actuator name="motor2">
       		    <hardwareInterface>EffortJointInterface</hardwareInterface>
-      		    <mechanicalReduction>1</mechanicalReduction>
+      		    <mechanicalReduction>163.5</mechanicalReduction>
     		  </actuator>
   		</transmission>
 
 		<transmission name="tran3">
     		  <type>transmission_interface/SimpleTransmission</type>
-    		  <joint name="joint3"/>
+    		  <joint name="${prefix}joint3"/>
     		  <actuator name="motor3">
       		    <hardwareInterface>EffortJointInterface</hardwareInterface>
-      		    <mechanicalReduction>1</mechanicalReduction>
+      		    <mechanicalReduction>159.261</mechanicalReduction>
     		  </actuator>
   		</transmission>
 
 		<transmission name="tran4">
     		  <type>transmission_interface/SimpleTransmission</type>
-    		  <joint name="joint4"/>
+    		  <joint name="${prefix}joint4"/>
     		  <actuator name="motor4">
       		    <hardwareInterface>EffortJointInterface</hardwareInterface>
-      		    <mechanicalReduction>1</mechanicalReduction>
+      		    <mechanicalReduction>65.6118</mechanicalReduction>
     		  </actuator>
   		</transmission>
 
 		<transmission name="tran5">
     		  <type>transmission_interface/SimpleTransmission</type>
-    		  <joint name="joint5"/>
+    		  <joint name="${prefix}joint5"/>
     		  <actuator name="motor5">
       		    <hardwareInterface>EffortJointInterface</hardwareInterface>
-      		    <mechanicalReduction>1</mechanicalReduction>
+      		    <mechanicalReduction>84.1923</mechanicalReduction>
     		  </actuator>
   		</transmission>
 

@@ -114,78 +114,7 @@
         			  izz="25.5045"/>
     			</inertial>
 		</link>
-		<link name="${prefix}link4">
-			<visual>
-				<origin rpy="-1.5709 -1.5709 0" xyz="0 0 0"/>
-				<geometry>
-					<mesh filename="package://comau_nm45_description/meshes/visual/NM-45_Link4.STL"/>
-				</geometry>
-				<material name="red"/>
-			</visual>
-			<collision>
-				<origin rpy="-1.5709 -1.5709 0" xyz="0 0 0"/>
-				<geometry>
-					<mesh filename="package://comau_nm45_description/meshes/collision/NM-45_Link4_CH.STL"/>
-				</geometry>
-				<material name="yellow"/>
-			</collision>
-			<inertial>
-      				<origin xyz="-0.01981 0 0.34863" rpy="0 0 0"/>
-     				<mass value="40.81696"/>
-      				<inertia 
-        			  ixx="3.53002" ixy="0" ixz="0.16885" 
-        			  iyy="1.79464" iyz="0.0" 
-        			  izz="0.09717"/>
-    			</inertial>
-		</link>
-		<link name="${prefix}link5">
-			<visual>
-				<origin rpy="-1.5709 0 0" xyz="0 0 0"/>
-				<geometry>
-					<mesh filename="package://comau_nm45_description/meshes/visual/NM-45_Link5.STL"/>
-				</geometry>
-				<material name="red"/>
-			</visual>
-			<collision>
-				<origin rpy="0 0 0" xyz="0 0 0"/>
-				<geometry>
-					<mesh filename="package://comau_nm45_description/meshes/collision/NM-45_Link5_CH.STL"/>
-				</geometry>
-				<material name="yellow"/>
-			</collision>
-			<inertial>
-      				<origin xyz="0.06264 0 0" rpy="0 0 0"/>
-     				<mass value="18.36813"/>
-      				<inertia 
-        			  ixx="0.1138" ixy="0.0" ixz="0.604" 
-        			  iyy="0.15699" iyz="0.0" 
-        			  izz="0.15854"/>
-    			</inertial>
-		</link>
-		<link name="${prefix}link6">
-			<visual>
-				<origin rpy="0 -1.5709 0" xyz="0 0 -0.025"/>
-				<geometry>
-					<mesh filename="package://comau_nm45_description/meshes/visual/NM-45_Link6.STL"/>
-				</geometry>
-				<material name="red"/>
-			</visual>
-			<collision>
-				<origin rpy="0 0 0" xyz="0 0 -0.025"/>
-				<geometry>
-					<mesh filename="package://comau_nm45_description/meshes/collision/NM-45_Link6_CH.STL"/>
-				</geometry>
-				<material name="yellow"/>
-			</collision>
-			<inertial>
-      				<origin xyz="0 0 -0.0131" rpy="0 0 0"/>
-     				<mass value="1.62727"/>
-      				<inertia 
-        			  ixx="0.0034" ixy="0.0" ixz="0.0" 
-        			  iyy="0.0165" iyz="0.0" 
-        			  izz="0.00325"/>
-    			</inertial>
-		</link>
+		
 		<!-- end of link list -->
 		<!-- joint list -->
 		<joint name="fixed" type="fixed">
@@ -213,33 +142,13 @@
 			<axis xyz="0 0 1" />
 			<limit lower="-2.967" upper="1.92" effort="1000" velocity="2.96" />
 		</joint>
-		<joint name="${prefix}joint4" type="revolute">
-			<parent link="link3"/>
-			<child link="link4"/>
-			<origin xyz="0.255 0.25 0" rpy="0 1.5708 0"/>
-			<axis xyz="0 0 -1" />
-			<limit lower="-3.1416" upper="3.1415" effort="1000" velocity="2.96" />
-		</joint>
-		<joint name="${prefix}joint5" type="revolute">
-			<parent link="link4"/>
-			<child link="link5"/>
-			<origin xyz="0 0 0.5574" rpy="0 -1.5708 0"/>
-			<axis xyz="0 0 -1" />
-			<limit lower="-2.147" upper="2.147" effort="100" velocity="3.48" />
-		</joint>
-		<joint name="${prefix}joint6" type="revolute">
-			<parent link="link5"/>
-			<child link="link6"/>
-			<origin xyz="0.175 0 0" rpy="0 1.5708 0"/>
-			<axis xyz="0 0 -1" />
-			<limit lower="-3.1416" upper="3.1415" effort="100" velocity="3.48" />
-		</joint>
+		
 		<!-- end of joint list -->
 
 		<!-- transmission list -->
 		<transmission name="tran1">
     		  <type>transmission_interface/SimpleTransmission</type>
-    		  <joint name="${prefix}joint1"/>
+    		  <joint name="joint1"/>
     		  <actuator name="motor1">
       		    <hardwareInterface>EffortJointInterface</hardwareInterface>
       		    <mechanicalReduction>139.03</mechanicalReduction>
@@ -248,7 +157,7 @@
 
   		<transmission name="tran2">
     		  <type>transmission_interface/SimpleTransmission</type>
-    		  <joint name="${prefix}joint2"/>
+    		  <joint name="joint2"/>
     		  <actuator name="motor2">
       		    <hardwareInterface>EffortJointInterface</hardwareInterface>
       		    <mechanicalReduction>163.5</mechanicalReduction>
@@ -257,38 +166,13 @@
 
 		<transmission name="tran3">
     		  <type>transmission_interface/SimpleTransmission</type>
-    		  <joint name="${prefix}joint3"/>
+    		  <joint name="joint3"/>
     		  <actuator name="motor3">
       		    <hardwareInterface>EffortJointInterface</hardwareInterface>
       		    <mechanicalReduction>159.261</mechanicalReduction>
     		  </actuator>
   		</transmission>
 
-		<transmission name="tran4">
-    		  <type>transmission_interface/SimpleTransmission</type>
-    		  <joint name="${prefix}joint4"/>
-    		  <actuator name="motor4">
-      		    <hardwareInterface>EffortJointInterface</hardwareInterface>
-      		    <mechanicalReduction>65.6118</mechanicalReduction>
-    		  </actuator>
-  		</transmission>
-
-		<transmission name="tran5">
-    		  <type>transmission_interface/SimpleTransmission</type>
-    		  <joint name="${prefix}joint5"/>
-    		  <actuator name="motor5">
-      		    <hardwareInterface>EffortJointInterface</hardwareInterface>
-      		    <mechanicalReduction>84.1923</mechanicalReduction>
-    		  </actuator>
-  		</transmission>
-		<transmission name="tran6">
-    		  <type>transmission_interface/SimpleTransmission</type>
-    		  <joint name="${prefix}joint6"/>
-    		  <actuator name="motor6">
-      		    <hardwareInterface>EffortJointInterface</hardwareInterface>
-      		    <mechanicalReduction>84.1923</mechanicalReduction>
-    		  </actuator>
-  		</transmission>
 		<!-- end transmission list -->
 
 	</xacro:macro>
